@@ -1,0 +1,63 @@
+header {
+  border: 10px solid transparent;
+  border-image: linear-gradient(45deg, #d4af37, #fff8d6) 1;
+  height: 100px;
+  color: purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: repeating-linear-gradient(
+    45deg,
+    #000 0,
+    #000 40px,
+    #c0c0c0 40px,
+    #c0c0c0 50px
+  );
+
+  padding: 20px;
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: 0.5s;
+}
+
+.navLink:hover {
+  background: #eee;
+}
+
+.navLink.activeNL {
+  background: #333;
+  color: white;
+  pointer-events: none; /* disabilita il click */
+  cursor: default;
+}
+
+.itemCard {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  background: #f5f5f5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.imageBox {
+  position: relative;
+}
+
+.imageBox .heart {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}
+
