@@ -1,4 +1,4 @@
-export default function RemoveButton({ onClick }) {
+export default function Remove({ onClick }) {
     return (
         <button className="remove" onClick={onClick}>
             ✖

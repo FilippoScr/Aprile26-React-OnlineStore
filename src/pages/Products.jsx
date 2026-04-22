@@ -2,17 +2,18 @@ import useItems from "../hooks/useItems";
 import useWishlist from "../hooks/useWishlist";
 import ItemCard from "../components/ItemCard";
 import Heart from "../components/Heart";
+import { QPriceMiniProvider } from "../components/QuantityPrice";
+import AddToCart from "../components/AddToCart";
+import Error from "./Error";
 
 export default function Products() {
-  const { items, loading, error } = useItems();
+  const { items, loading, errorType, error } = useItems();
   const { isInWishlist, addRemoveFavorite } = useWishlist();
 
   if (loading) return (<div>
     <h1>ARTICOLI</h1><p>Caricamento...</p>
   </div>);
-  if (error) return (<div>
-    <h1>ARTICOLI</h1><p>{error}</p>
-  </div>);
+  if (error) return <Error errorType={errorType} error={error} />
   console.log(items.map(i => i.id));
 
   return (
@@ -31,11 +32,27 @@ export default function Products() {
           image={i.image}
           rate={i.rating.rate}
           count={i.rating.count}
+          limit={i.limit}
         >
-          <Heart
-            active={isInWishlist(i.id)}
-            onClick={() => addRemoveFavorite(i)}
-          />
+
+          {{
+            heart: (
+              <Heart
+                active={isInWishlist(i.id)}
+                onClick={() => addRemoveFavorite(i)} //toggleWishlist
+              />
+            ),
+            choice: (
+              i.limit === 0 ? (
+                <p className="outOfStock">Articolo attualmente non disponibile.</p>
+              ) : (
+                <QPriceMiniProvider price={i.price} limit={i.limit}>
+                  <AddToCart item={i} />
+                </QPriceMiniProvider>
+              )
+            )
+          }}
+
         </ItemCard>
       ))}
     </div>

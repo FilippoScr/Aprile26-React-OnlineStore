@@ -1,3 +1,13 @@
+/* export default function Nav() {
+    function vuota() {
+        return "Nav vuota.";
+    }
+
+    return (
+        vuota()
+    );
+} */
+
 import { NavLink } from "react-router-dom";
 
 export default function Nav() {
@@ -29,6 +39,20 @@ export default function Nav() {
         className={({ isActive }) => isActive ? "navLink activeNL" : "navLink inactiveNL"}
       >
         Chi Siamo
+      </NavLink>
+      
+      <NavLink
+        to="/cart"
+        className={({ isActive }) => isActive ? "navLink activeNL" : "navLink inactiveNL"}
+      >
+        Carrello
+      </NavLink>
+      
+      <NavLink
+        to="/purchased"
+        className={({ isActive }) => isActive ? "navLink activeNL" : "navLink inactiveNL"}
+      >
+        Ordini Effettuati
       </NavLink>
     </nav>
   );
