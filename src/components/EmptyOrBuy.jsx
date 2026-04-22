@@ -23,9 +23,9 @@ export default function EmptyOrBuy() {
             totalCart
         };
 
-        addOrder(order);   // <-- salva l’ordine nel context
-        setCart([]);       // <-- svuota il carrello
-        navigate("/purchased"); // <-- vai alla pagina ordini
+        addOrder(order);
+        setCart([]);
+        navigate("/purchased");
     }
 
     return (

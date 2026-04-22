@@ -39,7 +39,7 @@ export default function Products() {
             heart: (
               <Heart
                 active={isInWishlist(i.id)}
-                onClick={() => addRemoveFavorite(i)} //toggleWishlist
+                onClick={() => addRemoveFavorite(i)}
               />
             ),
             choice: (

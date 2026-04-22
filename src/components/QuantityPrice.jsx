@@ -8,11 +8,8 @@ export function QPriceMiniProvider({ price, limit, qntFromCart, itemId, children
     const { updateQnt } = useContext(CartContext);
 
     function updateQntLocal(newQnt) {
-        // Imposta come quantità il numero massimo tra 1(minimo) e quello inserito dall'utente convertito in numero, se vuoto o NaN sarà 1(||1).
         const minQnt = Math.max(1, Number(newQnt) || 1);
 
-        // Primo operatore ternario: Necessario perché lo 0 è considerato Falsy, avrebbe impostato 1+ anche se in realtà il valore minore da impostare fosse 0.
-        // Secondo operatore ternario partendo da typeof: Se c'è un limite di tipo numerico (non 0), imposta come quantità il limite o il valore inserito dall'utente se minore. Mantiene il minore tra i 2 valori. Senza limite accetta qualsiasi quantità valida.
         const finalQnt = limit === 0 ? 0 : typeof limit === "number" ? Math.min(minQnt, limit) : minQnt;
         setQnt(finalQnt)
         updateQnt(itemId, finalQnt);

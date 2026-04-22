@@ -4,8 +4,6 @@ export default function Error({ errorType, error }) {
   const navigate = useNavigate();
 
   const isFakeError = !(errorType && error);
-  // TRUE = arrivi da Home → nessun errore reale
-  // FALSE = arrivi da Products → errore reale
 
   return (
     <div className="errorBox">
@@ -37,7 +35,7 @@ export default function Error({ errorType, error }) {
         Riprova
       </button>
 
-      <button onClick={() => navigate("/")}> {/* Oppure: () => window.location.href = "/" */}
+      <button onClick={() => navigate("/")}>
         Torna alla Home
       </button>
     </div>

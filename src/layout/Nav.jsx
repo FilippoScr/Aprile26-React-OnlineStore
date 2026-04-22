@@ -1,13 +1,3 @@
-/* export default function Nav() {
-    function vuota() {
-        return "Nav vuota.";
-    }
-
-    return (
-        vuota()
-    );
-} */
-
 import { NavLink } from "react-router-dom";
 
 export default function Nav() {
