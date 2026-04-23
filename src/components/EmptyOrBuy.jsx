@@ -8,7 +8,7 @@ export default function EmptyOrBuy() {
     const { cart, qntTotalProducts, totalCart, setCart } = useContext(CartContext);
     const { addOrder } = useContext(OrdersContext);
 
-    function handlePurchase() {
+    function handleBuy() {
         const date = new Date().toLocaleString('it-IT').replace(',', '');
 
         const order = {
@@ -23,16 +23,16 @@ export default function EmptyOrBuy() {
             totalCart
         };
 
-        addOrder(order);
-        setCart([]);
-        navigate("/purchased");
+        addOrder(order);   // <-- salva l’ordine nel context
+        setCart([]);       // <-- svuota il carrello
+        navigate("/purchased"); // <-- vai alla pagina ordini
     }
 
     return (
         <div className="emptyOrBuyBox">
             <span className="emptyOrBuy">Totale Carrello: {totalCart}</span>
 
-            <button className="purchaseBtn" onClick={handlePurchase}>
+            <button className="buyBtn" onClick={handleBuy}>
                 Acquista
             </button>
             <button className="emptyBtn" onClick={() => setCart([])}>

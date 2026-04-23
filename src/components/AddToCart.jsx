@@ -7,7 +7,7 @@ export default function AddToCart({ item }) {
     const { fillCart } = useContext(CartContext);
 
     return (
-        <button onClick={() => fillCart(item, qnt)}>
+        <button onClick={() => fillCart(item, qnt)} className="addToCartBtn">
             Aggiungi al Carrello
         </button>
     );
