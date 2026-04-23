@@ -1,9 +1,5 @@
 export default function Footer() {
-    function vuota() {
-        return "Footer vuoto.";
-    }
-
     return (
-        vuota()
+        <footer><h4>FOOTER VUOTO</h4></footer>
     );
 }
