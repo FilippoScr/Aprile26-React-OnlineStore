@@ -7,7 +7,7 @@ export default function ItemCard({ className, children, image, title, descriptio
             {children.heart}
             </div>
             <h3>{title}</h3>
-            <p>{description}</p>
+            <p className="description">{description}</p>
             <p>€<strong>{price}</strong></p>
             <p>{rate}⭐ - {count}👫</p>
             

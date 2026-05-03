@@ -6,7 +6,7 @@ export default function Home() {
       <h1>Benvenuto nella Home</h1>
         <NavLink
           to="/error"
-          className="errorButton"
+          className="errorBtn"
         >
           Visualizza Pagina Errore
         </NavLink>

@@ -1,10 +1,23 @@
-button {
+/* GENERALI */
+* {
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+button {
   border: none;
   background: none;
   cursor: pointer;
 }
+/* ------------------------------------------------------------------ */
 
+
+/* HEADER */
 header {
   border: 10px solid transparent;
   border-image: linear-gradient(45deg, #d4af37, #fff8d6) 1;
@@ -25,6 +38,7 @@ header {
   padding: 20px;
 }
 
+/* NAV */
 .nav {
   display: flex;
   gap: 10px;
@@ -46,10 +60,30 @@ header {
 .navLink.activeNL {
   background: #555;
   color: white;
-  pointer-events: none; /* disabilita il click */
+  pointer-events: none;
   cursor: default;
 }
 
+/* FOOTER */
+footer {
+  margin-top: 100px;
+  border: 10px solid transparent;
+  border-image: linear-gradient(45deg, #d4af37, #fff8d6) 1;
+  height: 100px;
+  color: purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #777;
+
+  padding: 20px;
+}
+/* ------------------------------------------------------------------ */
+
+
+/* PRODUCTS - WISHLIST - CART */
+/* ITEMCARD AND CHILDREN */
 .itemCard {
   padding: 15px;
   margin: 10px 0;
@@ -111,21 +145,21 @@ header {
 .itemCard p.description {
   max-height: 80px;
   overflow: hidden;
-}
-
-.itemCard p.description {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   line-clamp: 3;
   -webkit-box-orient: vertical;
-  overflow: hidden;
 }
+/* ------------------------------------------------------------------ */
 
-.quantityRow, .emptyOrBuyBox {
+
+/* INPUT - BUTTON - NOTIFICATIONS */
+.quantityRow, .emptyOrBuyBox, .btnErrorBox {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-top: 10px;
+  height: 40px;
 }
 
 .qntInput {
@@ -141,7 +175,11 @@ header {
   color: #444;
 }
 
-.addToCartBtn {
+.errorBtn {
+  text-decoration: none;
+}
+
+.errorBtn, .addToCartBtn, .tryAgainBtn, .returnToHomeBtn {
   padding: 6px 12px;
   background: #333;
   color: white;
@@ -151,7 +189,7 @@ header {
   transition: 0.3s;
 }
 
-.addToCartBtn:hover {
+:is(.errorBtn, .addToCartBtn, .tryAgainBtn, .returnToHomeBtn):hover {
   background: #555;
 }
 
@@ -164,14 +202,12 @@ header {
 .outOfStock {
   color: red;
   font-weight: 600;
-  margin-top: 10px;
 }
 
 /* Components: QuantityPrice */
 .limitReached {
   color: orange;
   font-weight: 600;
-  margin-top: 5px;
 }
 
 .buyBtn,
@@ -200,21 +236,4 @@ header {
 
 .emptyBtn:hover {
   background: #555;
-}
-
-
-
-footer {
-  margin-top: 100px;
-  border: 10px solid transparent;
-  border-image: linear-gradient(45deg, #d4af37, #fff8d6) 1;
-  height: 100px;
-  color: purple;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background-color: #777;
-
-  padding: 20px;
 }

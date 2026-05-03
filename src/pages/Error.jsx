@@ -31,13 +31,14 @@ export default function Error({ errorType, error }) {
         </>
       )}
 
-      <button onClick={() => window.location.reload()}>
-        Riprova
-      </button>
-
-      <button onClick={() => navigate("/")}>
-        Torna alla Home
-      </button>
+      <div className="btnErrorBox">
+        <button onClick={() => window.location.reload()} className="tryAgainBtn">
+          Riprova
+        </button>
+        <button onClick={() => navigate("/")} className="returnToHomeBtn">
+          Torna alla Home
+        </button>
+      </div>
     </div>
   );
 }
